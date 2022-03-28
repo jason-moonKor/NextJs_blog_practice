@@ -30,6 +30,8 @@ Home이라는 함수안에 return값이 "/"페이지
 pages 폴더안에 폴더작성시 폴더이름이 http://localhost:3000/[폴더이름]
 으로 주소값이 폴더명이 됨. => 파일기반 라우팅시스템의 특징
 
+getStaticProps
+getStaticPaths
 
 
 
@@ -37,3 +39,5 @@ pages 폴더안에 폴더작성시 폴더이름이 http://localhost:3000/[폴더
 npm i next react react-dom
 
 npx create-next-app [폴더명] // 으로 cna 생성
+
+npm i antd @ant-design/icons //
