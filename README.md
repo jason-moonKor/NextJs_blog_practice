@@ -24,7 +24,7 @@ npm start 로 실행가능.
 
 .next 라는 폴더안에 build된 파일들이 생성됨
 
-<br/>
+---
 
 npx create-next-app 으로 프로젝트생성후
 
