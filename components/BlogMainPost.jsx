@@ -1,7 +1,15 @@
 import {Card, Col, Row} from "antd";
 import Link from "next/link";
+import dayjs from "dayjs";
 
-export default function BlogMainPost({slug, thumbnail}) {
+export default function BlogMainPost({
+	createAt,
+	author,
+	subtitle,
+	title,
+	slug,
+	thumbnail
+}) {
 	return (
 		<Row
 			align="middle"
@@ -13,8 +21,15 @@ export default function BlogMainPost({slug, thumbnail}) {
 				<Link href={`/post/${slug}`}>
 					<a>
 						<Card
+							style={{border: "none"}}
 							cover={<img alt={thumbnail.alt} src={thumbnail.imageUrl} />}
-						></Card>
+						>
+							<h1>{title}</h1>
+							<h3>{subtitle}</h3>
+							<h4>
+								{author.name} . {dayjs(createAt).format("MMMM D")}
+							</h4>
+						</Card>
 					</a>
 				</Link>
 			</Col>

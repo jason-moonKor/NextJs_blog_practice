@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Nextjs Basic 사용해보기 / Nextjs이용해서 Sanity 연동해서 블로그 만들어보기
 
-## Getting Started
+### note...
 
-First, run the development server:
+- Nextjs 의 가장큰 특징은 개발자가 ssr에 대해 직접적인 고민을 하지 않아도 된다는 점
+- 정적사이트를 만들수있다
+- file-system 라우팅
+- 타입스크립트 서포트
+- ssg and ssr 하이브리드
 
-```bash
-npm run dev
-# or
-yarn dev
+package.json에 스크립트 명령문 추가
+
+```
+	"dev": "next dev",
+	"build": "next build",
+	"start": "next start"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+npm run dev 로 실행
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+npm run build 로 빌드시키면
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+npm start 로 실행가능.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+.next 라는 폴더안에 build된 파일들이 생성됨
 
-## Learn More
+<br/>
 
-To learn more about Next.js, take a look at the following resources:
+npx create-next-app 으로 프로젝트생성후
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+pages/index.js 에서 메인페이지 설정
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Home이라는 함수안에 return값이 "/"페이지
 
-## Deploy on Vercel
+pages 폴더안에 폴더작성시 폴더이름이 http://localhost:3000/[폴더이름] 으로 주소값이 폴더명이 됨. => 파일기반 라우팅시스템의 특징
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+getStaticProps getStaticPaths
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+next build 를 하면 npm start 로 서버를 올릴수있고 여기선 /api/hello 를 사용가능 CSR으로 바뀌면서 페이지이동속도가 빨라진다
+
+next export 를 하면 out폴더가 생성되고 /api와 하위폴더 사용불가능해진다마찬가지로 CSR이라서 페이지이동속도는 빨라짐
+
+---
+
+### 사용된 라이브러리 및 기타 명령어
+
+- npm i next react react-dom
+- npx create-next-app [폴더명] //으로 cna 생성
+- npm i antd @ant-design/icons
+- npm i dayjs
+- npm i @sanity/block-content-to-react
+- npm i react-syntax-highlighter

@@ -4,6 +4,8 @@ import SanityService from "../services/SanityService";
 import Header from "../components/Header";
 import BlogHeadline from "../components/BlogHeadline";
 import BlogMainPost from "../components/BlogMainPost";
+import BlogList from "../components/BlogList";
+import Footer from "../components/Footer";
 
 export default function Home({home, posts}) {
 	const mainPost = posts.find((p) => p.slug === home.mainPostUrl);
@@ -17,6 +19,8 @@ export default function Home({home, posts}) {
 			<Header />
 			<BlogHeadline />
 			<BlogMainPost {...mainPost} />
+			<BlogList posts={otherPosts} />
+			<Footer />
 		</div>
 	);
 }

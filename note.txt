@@ -33,6 +33,11 @@ pages 폴더안에 폴더작성시 폴더이름이 http://localhost:3000/[폴더
 getStaticProps
 getStaticPaths
 
+next build 를 하면 npm start 로 서버를 올릴수있고 여기선 /api/hello 를 사용가능
+CSR으로 바뀌면서 페이지이동속도가 빨라진다
+
+next export 를 하면 out폴더가 생성되고 /api와 하위폴더 사용불가능해진다
+마찬가지로 CSR이라서 페이지이동속도는 빨라짐
 
 
 --------------------------
@@ -41,3 +46,9 @@ npm i next react react-dom
 npx create-next-app [폴더명] // 으로 cna 생성
 
 npm i antd @ant-design/icons //
+
+npm i dayjs
+
+npm i @sanity/block-content-to-react
+
+npm i react-syntax-highlighter
